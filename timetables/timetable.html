@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,">
     <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
     <title>MZP Ostrołęka - Rozkład Jazdy</title>
-    <link rel="stylesheet" href="https://piraxu.github.io/Mzp-ostroleka/resources/style.css" type="text/css"/>
-    <link rel="stylesheet" href="https://piraxu.github.io/Mzp-ostroleka/resources/fontello/css/fontello.css">
-    <link id="sicon" rel="icon" type="image/x-icon" href="https://piraxu.github.io/Mzp-ostroleka/resources/img/mlogo.png">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="/resources/fontello/css/fontello.css">
+    <link id="sicon" rel="icon" type="image/x-icon" href="/resources/img/mlogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 <body onload="loadSchedule(),mlinks(),servershutdown()">
     <div class="nav">
         <span id="menu-logo" style="font-size:18px;">
-            <img id="mimg" src="https://piraxu.github.io/Mzp-ostroleka/resources/img/mlogo.png" alt="MZP" style="height: 40px; vertical-align: middle;"> Ostrołęka
+            <img id="mimg" src="/resources/img/mlogo.png" alt="MZP" style="height: 40px; vertical-align: middle;"> Ostrołęka
         </span>
         <div style="border-left: 1px solid #1a1a1f;" class="menubutton"><a id="mpage" href="">Szybki Start</a></div>
         <div class="menubutton"><a id="ttables" href="">Rozkład Jazdy</a></div>
@@ -87,7 +87,7 @@
     </div>
     
     <script>
-function loadSchedule() {
+   function loadSchedule() {
     const urlParams = new URLSearchParams(window.location.search);
     const jsonFilePath = urlParams.get('json');
 
@@ -96,10 +96,7 @@ function loadSchedule() {
         return;
     }
 
-    // Dodanie timestamp do URL, aby uniknąć cache’owania
-    const noCacheUrl = `${jsonFilePath}?t=${Date.now()}`;
-
-    fetch(noCacheUrl, { cache: 'no-store' })
+    fetch(jsonFilePath)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Nie znaleziono pliku JSON.');
@@ -107,41 +104,36 @@ function loadSchedule() {
             return response.json();
         })
         .then(data => {
-            updateScheduleUI(data);
+            document.getElementById('linenmbr').textContent = `${data.line}`;
+            document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
+            document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
+
+            const scheduleContent = document.getElementById('schedule-content');
+            scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
+
+            const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
+
+            sortedHours.forEach(hour => {
+                const row = document.createElement('div');
+                row.classList.add('schedule-row');
+
+                const hourDiv = document.createElement('div');
+                hourDiv.classList.add('schedule-hour');
+                hourDiv.textContent = hour;
+
+                const minutesDiv = document.createElement('div');
+                minutesDiv.classList.add('schedule-minute');
+                minutesDiv.textContent = data.rozkład[hour].join(', ');
+
+                row.appendChild(hourDiv);
+                row.appendChild(minutesDiv);
+                scheduleContent.appendChild(row);
+            });
         })
         .catch(error => {
             alert("Błąd wczytywania pliku JSON: " + error.message);
         });
 }
-
-function updateScheduleUI(data) {
-    document.getElementById('linenmbr').textContent = data.line;
-    document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
-    document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
-
-    const scheduleContent = document.getElementById('schedule-content');
-    scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
-
-    const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
-
-    sortedHours.forEach(hour => {
-        const row = document.createElement('div');
-        row.classList.add('schedule-row');
-
-        const hourDiv = document.createElement('div');
-        hourDiv.classList.add('schedule-hour');
-        hourDiv.textContent = hour;
-
-        const minutesDiv = document.createElement('div');
-        minutesDiv.classList.add('schedule-minute');
-        minutesDiv.textContent = data.rozkład[hour].join(', ');
-
-        row.appendChild(hourDiv);
-        row.appendChild(minutesDiv);
-        scheduleContent.appendChild(row);
-    });
-}
-
 
     </script>
 </body>
