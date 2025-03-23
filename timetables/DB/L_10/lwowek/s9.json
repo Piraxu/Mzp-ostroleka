@@ -1,0 +1,10 @@
+{
+    "line": "10",
+    "direction": "Lwówek Śląski",
+    "przystanek": "Warszawska",
+    "rozkład": {
+        "04": [
+            "04"
+        ]
+    }
+}

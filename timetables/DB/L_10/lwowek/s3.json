@@ -1,0 +1,10 @@
+{
+    "line": "10",
+    "direction": "Lwówek Śląski",
+    "przystanek": "Ostrołęka Lotnisko",
+    "rozkład": {
+        "04": [
+            "00"
+        ]
+    }
+}

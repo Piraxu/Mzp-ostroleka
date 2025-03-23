@@ -1,0 +1,10 @@
+{
+    "line": "10",
+    "direction": "Lwówek Śląski",
+    "przystanek": "Rondo Czyżyńskie",
+    "rozkład": {
+        "04": [
+            "08"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "line": "10",
+    "direction": "Lwówek Śląski",
+    "przystanek": "Tyniec Pętla",
+    "rozkład": {
+        "03": [
+            "59"
+        ]
+    }
+}

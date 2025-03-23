@@ -1,0 +1,10 @@
+{
+    "line": "10",
+    "direction": "Tyniec Pętla",
+    "przystanek": "Dworcowa",
+    "rozkład": {
+        "04": [
+            "12"
+        ]
+    }
+}
