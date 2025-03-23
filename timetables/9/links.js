@@ -1,5 +1,5 @@
 function timetableslinks() {
-    var pagelink = "/"
+    var pagelink = "https://piraxu.github.io/Mzp-ostroleka/"
     var style = document.getElementById("mainstyle")
     var js = document.getElementById("mainjs")
     var mimg = document.getElementById("mimg")
