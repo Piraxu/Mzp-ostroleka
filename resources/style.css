@@ -1,0 +1,1143 @@
+/* zwykły styl */
+body {
+    background-color: #13131a;
+    margin:0 !important;
+    color:#d3d3d3;
+    font-family: "Lato";
+
+    
+}
+
+.nav {
+    background-color: #2b2b35;
+z-index: 10;
+    position: sticky;
+  top: 0px;
+  font-size: 0px;
+    
+}
+
+.menubutton {
+    font-size:16px !important;
+    font-weight: 300;
+   display: inline-block;
+    padding: 1% 1%;
+    border-right: 1px #1a1a1f solid;
+    cursor: pointer;
+}
+
+.menubutton a {
+    color:white;
+    text-decoration: none;
+}
+
+.menubutton:hover {
+    transition:all 1s;
+    background-color: #2e86de;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#content {
+    width: 100%;
+}
+
+#introduction {
+    width: 100%; 
+}
+
+#inttext:hover {
+letter-spacing: 5px;
+transition: all 1.2s;
+}
+
+#inttext {
+    letter-spacing: 1px;
+    text-align: center; 
+}
+
+#pagetitle {
+    text-align: center;
+    background-image: url("IMG/P_image.png");
+    opacity: 50%;
+    padding:7% 7%;
+    background-size: cover;
+    background-size: cover; /* lub "contain", w zależności od efektu, który chcesz uzyskać */
+    background-repeat: no-repeat; /* opcjonalnie - zapobiega powtarzaniu obrazu */
+    background-position: center; /* opcjonalnie - wyśrodkowanie obrazu w elemencie */
+}
+
+#pagetitleT {
+    text-align: center;
+    background-image: url("IMG/tramimg.png");
+    opacity: 50%;
+    padding:7% 7%;
+    background-size: cover; /* lub "contain", w zależności od efektu, który chcesz uzyskać */
+    background-repeat: no-repeat; /* opcjonalnie - zapobiega powtarzaniu obrazu */
+    background-position: center; /* opcjonalnie - wyśrodkowanie obrazu w elemencie */
+}
+
+
+#pagetitleTM {
+    text-align: center;
+    background-image: url("IMG/Timetableph.png");
+    opacity: 50%;
+    padding:7% 7%;
+    background-size: cover; /* lub "contain", w zależności od efektu, który chcesz uzyskać */
+    background-repeat: no-repeat; /* opcjonalnie - zapobiega powtarzaniu obrazu */
+    background-position: center; /* opcjonalnie - wyśrodkowanie obrazu w elemencie */
+}
+
+#U1div {
+    position: relative;
+    left:5px;
+    display: inline-block;
+    background-color: #d3d3d3;
+    color: #1a1a1f;
+    padding: 10px 10px;
+}
+
+#Utext {
+    display: inline-block;
+    width: 90%;
+    font-size: 16px;
+}
+
+
+#clock {
+    border-radius: 0px 12px 12px 0px;
+ margin-top:1%;
+    width: 8%;
+    background-color: #d3d3d3;
+    color:#13131a;
+    text-align: center;
+    padding: 5px 5px;
+    
+}
+
+
+
+#hour {
+    font-size: 16pt;
+    display: block;
+    font-weight: 900;
+}
+
+#date {
+    font-size: 14pt;
+    display: block;
+    font-weight: 700;
+}
+
+#art-text {
+    padding: 1% 1%;
+    border-top: 0.5px solid #ffffff;
+    border-bottom: 0.5px solid #ffffff;
+    width: 15%;
+    margin: auto;
+}
+
+
+#tttext {
+    padding: 1% 1%;
+    border-top: 0.5px solid #ffffff;
+    border-bottom: 0.5px solid #ffffff;
+    width: 16%;
+    margin: auto;
+}
+
+#tttext:hover {
+    transition:all 1s;
+    letter-spacing: 5px;
+}
+
+
+
+#art-text:hover {
+transition:all 1s;
+    letter-spacing: 5px;
+}
+#ar-container {
+margin: auto;
+}
+
+#articles {
+    width: 50%;
+    margin:auto;
+
+}
+
+
+#a-date {
+    width: 6%;
+    text-align: center;
+    background-color: #d3d3d3;
+    color:#1a1a1f;
+}
+#a-date span {
+display: block;
+}
+
+
+
+#dofar {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+#mofar {
+    font-size: 12px;
+}
+
+.article {
+    margin-left: 10%;
+    display: flex;
+    height: 43.2px;
+}
+
+#mobilemenu {
+    display:none;
+}
+
+.header {
+    border:2px solid #d3d3d3;
+    width: 80%;
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;  
+    
+}
+
+#chooser-container {
+    width: 100%;
+}
+
+#Legend {
+    float: left;
+ background-color: #15151c;
+ width: 10%;
+ padding: 1%;
+ border-top: solid 1px #d3d3d3;
+ border-bottom: solid 1px #d3d3d3;
+ border-right: solid 1px #d3d3d3;
+ margin:0;
+ display: inline-block;
+}
+
+.example_line {
+    width: 32px;
+    height:25px;
+    background-color: #d3d3d3;
+    color:#13131a;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+}
+
+.example_line:first-of-type {
+    background-color: #2e86de;
+    color:#d3d3d3;
+}
+
+.example_line {
+    background-color: #eb3434;
+    color:#d3d3d3;
+}
+
+.example_line:last-of-type {
+    background-color: #15750e;
+    color:#d3d3d3;
+}
+
+.exp_text {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+
+#timetable {
+    margin: auto;
+    border:1px solid #d3d3d3;
+    width: 50%;
+    border-radius: 6px;
+
+    #header {
+        background-color: #d3d3d3;
+        color:#13131a;
+        border-radius: 4px 4px 0px 0px;
+        padding: 0.5%;
+    }
+
+    #lines {
+        padding: 1%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 5px;
+    }
+
+    .normal {
+        display: inline-block;
+        background-color: #2e86de;
+  color: #d3d3d3;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  min-width:32px;
+  min-height: 25px;
+  text-decoration: none;
+    }
+
+    .planed {
+        display: inline-block;
+        background-color: #15750e;;
+  color: #d3d3d3;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  min-width:32px;
+  min-height: 25px;
+  text-decoration: none;
+    }
+
+    .hint {
+        display: inline-block;
+        background-color: #2b2b35;
+  color: #d3d3d3;
+  opacity: 80%;
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  min-width:32px;
+  min-height: 25px;
+  text-decoration: none;
+    }
+
+
+}
+
+            
+
+
+#mobilechooser {
+    display: none;
+}
+
+
+#line-info {
+    background-color: #d3d3d3;
+    color:#13131a;
+    width: 15% !important;
+    height: 72px;
+    border-radius: 0px 12px 12px 0px;
+    margin-top: 1%;
+}
+ 
+
+#linenmbr {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    display: block;
+}
+
+#current-stop {
+    margin:auto;
+    width: 25%;
+    display: block !important;
+    font-size: 24px;
+    font-weight:600;
+    text-align: center;
+    padding: 0.5%;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+#back {
+    display: none;
+}
+
+#schedule {
+    width: 100%;
+    display: block;
+}
+
+#schedule table {
+    margin:auto;
+    border-radius: 12px;
+    width: 16%;
+
+
+  
+}
+
+
+
+#minutes {
+    width: 50%;
+}
+
+#dirname {
+    font-size: 20px;
+    font-weight: 400;
+    display: block !important;
+}
+
+ /* width */
+ ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #1a1a1f;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 24px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #d3d3d3 ;
+    border-radius: 10px;
+  } 
+
+  #footer {
+display: none;
+  }
+
+  #stcontainer {
+    gap:25px;
+    margin: auto;
+    width: 50%;
+    display: flex;           
+    align-items: flex-start;
+}
+
+#StopTable {
+    margin: 2.2px;
+    width: 49%;
+    border:1px solid #d3d3d3;
+    border-radius: 12px;
+    
+}
+
+
+#StopTable #t-content {
+    margin: auto;
+    width: 90%;
+}
+
+
+
+
+
+
+.stop-element{
+    color: #d3d3d3;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 2%;
+    cursor:pointer;
+    
+
+}
+
+.stop-element-side {
+    display: block;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 2%;
+    cursor:pointer;
+    font-style: italic; 
+    padding-left: 8%;
+}
+
+.stop-element-side:hover {
+    background-color: #d3d3d3;
+    color: #13131a;
+    transition:all 1s;
+}
+
+.stop-element:hover {
+    background-color: #d3d3d3;
+    color: #13131a;
+    transition:all 1s;
+}
+
+
+#dirname {
+    border:2px solid #d3d3d3;
+    border-radius: 10px 10px 0px 0px;
+    color:#13131a;
+    background-color: #d3d3d3;
+}
+
+
+
+#inftable {
+    border-radius: 12px;
+    width: 30%;
+    margin:auto;
+    border:2px solid #d3d3d3;
+}
+
+
+#tname {
+background-color: #d3d3d3;
+color: #13131a;
+position: relative;
+bottom: 19px;
+text-align: center;
+border-radius: 10px 10px 0px 0px;
+font-size: 18px;
+font-weight: 900;
+}
+
+
+
+/* Małe smartfony */
+@media (min-width: 320px) and (max-width:374px) {
+    /* Strona główna */
+   .nav {
+display: none !important;
+   }
+
+   #mobilemenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 3px 1px; 
+
+    .mobutton {
+        flex: 1 1 auto; 
+        min-width: 150px; 
+        text-align: center; 
+        background-color: #d3d3d3;
+        color:#13131a;
+
+        a {
+            color:#13131a;
+            text-decoration: none;
+        }
+    }
+
+   }
+
+   #Utext {
+    width: 60%;
+   }
+
+   #U1div {
+    padding: 5px 5px;
+   }
+   
+   
+   #pagetitle h1 {
+    width: 90% !important;
+   }
+
+   #art-text {
+    width: 90%;
+   }
+
+   #articles {
+    width: 100%;
+   }
+
+   .article {
+    width: 88%;
+    font-size: 12px;
+   }
+
+   #a-date {
+    width: 12%;
+   }
+
+
+   /* Stronka rozkładów */
+
+   #back {
+    margin-top:5%;
+    border-radius: 0px 12px 12px 0px;
+    display: block !important;
+    background-color: #d3d3d3;
+    color: #13131a;
+    width: 20%;
+   }
+
+   #clock {
+    margin-top: 5%;
+    width: 35%;
+    font-size: 10px;
+   }
+
+   #chooser {
+    display: none;
+   }
+
+#mobilechooser {
+    display: block !important;
+}
+
+   #category-name {
+    display: block !important;
+    display: none;
+    position: relative;
+    top: 8px;
+    background-color: #d3d3d3;
+    color:#13131a;
+    width: 50%;
+   }
+
+   #mlines-content {
+    margin:auto;
+    display: flex;
+gap:5px 4px;
+    flex-wrap: wrap;
+   }
+
+
+   .MobileButton {
+    font-size: 18px;
+    font-weight: 900;
+    padding: 1% 1%;
+    display: inline-block;
+    background-color: #d3d3d3;
+    color:#13131a;
+    min-width: 25px;
+    text-align: center;
+   }
+
+   /* Informacje o stronie */
+
+   #inftable {
+    width:80% !important;
+   }
+
+   /* Tabelka Odjazdów */
+
+
+   #mlineinfo {
+    display: block;
+    width: 100%;
+    #lnmbr-square {
+        margin-right:auto;
+        margin-left: auto;
+        margin-top:8%;
+        height: 85px;
+        width: 85px;
+        background-color: #13131a;
+        border:2.5px solid #d3d3d3;
+        border-radius: 50%;
+        display:flex;
+        text-align: center;
+        font-size:50px;
+         
+        span {
+            display: block !important;
+            margin:auto;
+            font-weight: 700;
+        }
+    }
+   
+}
+
+#mdir {
+    background-color: #d3d3d3;
+    color: #13131a;
+   padding: 0% 3%;
+   border-radius: 0px 0px 12px 0px;
+}
+
+    
+
+
+   #pagetitleTM h1 {
+    width: 90% !important;
+   }
+
+   #line-info {
+    display: none;
+   }
+   
+   #back {
+    margin-top:5% !important;
+   }
+
+   #current-stop {
+    width: 100%;
+    font-size: 18px;
+   }
+
+   #schedule table {
+    width: 70%;
+   }
+
+   /* Przystanki */
+   #pagetitleT h1 {
+    font-size: 24px;
+    width: 100% !important;
+   }
+
+   #stcontainer {
+    display: block !important;
+    width: 100%;
+     
+    hr {
+        display: block !important;
+    }
+   }
+   
+#back {
+    margin-bottom: 5%;
+}
+   
+   #StopTable {
+    margin:auto;
+    width: 80% !important;
+   }
+  
+}
+/* Średnie smartfony */
+@media (min-width: 375px) and (max-width:413px) {
+        /* Strona główna */
+   .nav {
+    display: none !important;
+       }
+    
+       #mobilemenu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; 
+        gap: 3px 1px; 
+    
+        .mobutton {
+            flex: 1 1 auto; 
+            min-width: 150px; 
+            text-align: center; 
+            background-color: #d3d3d3;
+            color:#13131a;
+    
+            a {
+                color:#13131a;
+                text-decoration: none;
+            }
+        }
+    
+       }
+    
+       #Utext {
+        width: 69% !important;
+       }
+    
+       #U1div {
+        padding: 5px 5px;
+       }
+       
+       
+       #pagetitle h1 {
+        width: 70% !important;
+       }
+    
+       #art-text {
+        width: 70% !important;
+       }
+    
+       #articles {
+        width: 100%;
+       }
+    
+       .article {
+        width: 88%;
+        font-size: 12px;
+       }
+    
+       #a-date {
+        width: 12%;
+       }
+    
+    
+       /* Stronka rozkładów */
+    
+       #back {
+        margin-top:5%;
+        border-radius: 0px 12px 12px 0px;
+        display: block !important;
+        background-color: #d3d3d3;
+        color: #13131a;
+        width: 20%;
+       }
+    
+       #clock {
+        margin-top: 5%;
+        width: 30%;
+        font-size: 10px;
+       }
+    
+       #chooser {
+        display: none;
+       }
+    
+    #mobilechooser {
+        display: block !important;
+    }
+    
+       #category-name {
+        display: block !important;
+        display: none;
+        position: relative;
+        top: 8px;
+        background-color: #d3d3d3;
+        color:#13131a;
+        width: 50%;
+       }
+    
+       #mlines-content {
+        margin:auto;
+        display: flex;
+    gap:5px 4px;
+        flex-wrap: wrap;
+       }
+    
+    
+       .MobileButton {
+        font-size: 18px;
+        font-weight: 900;
+        padding: 1% 1%;
+        display: inline-block;
+        background-color: #d3d3d3;
+        color:#13131a;
+        min-width: 25px;
+        text-align: center;
+       }
+    
+       /* Informacje o stronie */
+    
+       #inftable {
+        width:70% !important;
+       }
+
+       /* Tabelka Rozkładów */
+       #mlineinfo {
+        display: block;
+        width: 100%;
+        #lnmbr-square {
+            margin-right:auto;
+            margin-left: auto;
+            margin-top:10%;
+            height: 85px;
+            width: 85px;
+            background-color: #13131a;
+            border:2.5px solid #d3d3d3;
+            border-radius: 50%;
+            display:flex;
+            text-align: center;
+            font-size:50px;
+             
+            span {
+                display: block !important;
+                margin:auto;
+                font-weight: 700;
+            }
+        }
+       }
+
+       
+#mdir {
+    background-color: #d3d3d3;
+    color: #13131a;
+   padding: 0% 3%;
+   border-radius: 0px 0px 12px 0px;
+}
+
+    
+    
+       #pagetitleTM h1 {
+        width: 80% !important;
+       }
+    
+       #line-info {
+        display: none;
+       }
+       
+       #back {
+        margin-top:5% !important;
+       }
+    
+       #current-stop {
+        width: 100%;
+        font-size: 18px;
+       }
+    
+       #schedule table {
+        width: 70%;
+       }
+      
+          /* Przystanki */
+   #pagetitleT h1 {
+    font-size: 24px;
+    width: 80% !important;
+   }
+
+   #stcontainer {
+    display: block !important;
+    width: 100%;
+     
+    hr {
+        display: block !important;
+    }
+   }
+   
+#back {
+    margin-bottom: 5%;
+}
+   
+   #StopTable {
+    margin:auto;
+    width: 80% !important;
+   }
+}
+
+/* Duże smartfony */
+@media (min-width: 414px) and (max-width:460px) {
+        /* Strona główna */
+   .nav {
+    display: none !important;
+       }
+    
+       #mobilemenu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; 
+        gap: 3px 1px; 
+    
+        .mobutton {
+            flex: 1 1 auto; 
+            min-width: 150px; 
+            text-align: center; 
+            background-color: #d3d3d3;
+            color:#13131a;
+    
+            a {
+                color:#13131a;
+                text-decoration: none;
+            }
+        }
+    
+       }
+    
+       #Utext {
+        width: 72%;
+       }
+    
+       #U1div {
+        padding: 5px 5px;
+       }
+       
+       
+       #pagetitle h1 {
+        width: 50% !important;
+       }
+    
+       #art-text {
+        width: 50%;
+       }
+    
+       #articles {
+        width: 100%;
+       }
+    
+       .article {
+        width: 88%;
+        font-size: 12px;
+       }
+    
+       #a-date {
+        width: 12%;
+       }
+    
+    
+       /* Stronka rozkładów */
+    
+       #back {
+        margin-top:5%;
+        border-radius: 0px 12px 12px 0px;
+        display: block !important;
+        background-color: #d3d3d3;
+        color: #13131a;
+        width: 20%;
+       }
+    
+       #clock {
+        margin-top: 5%;
+        width: 35%;
+        font-size: 10px;
+       }
+    
+       #chooser {
+        display: none;
+       }
+    
+    #mobilechooser {
+        display: block !important;
+    }
+    
+       #category-name {
+        display: block !important;
+        display: none;
+        position: relative;
+        top: 8px;
+        background-color: #d3d3d3;
+        color:#13131a;
+        width: 50%;
+       }
+    
+       #mlines-content {
+        margin:auto;
+        display: flex;
+    gap:5px 4px;
+        flex-wrap: wrap;
+       }
+    
+    
+       .MobileButton {
+        font-size: 18px;
+        font-weight: 900;
+        padding: 1% 1%;
+        display: inline-block;
+        background-color: #d3d3d3;
+        color:#13131a;
+        min-width: 25px;
+        text-align: center;
+       }
+    
+       /* Informacje o stronie */
+    
+       #inftable {
+        width:80% !important;
+       }
+       
+       /* Tabelka Rozkładów */
+       #pagetitleTM h1 {
+        width: 80% !important;
+       }
+    
+       #line-info {
+        width: 53% !important;
+       }
+       
+       #back {
+        margin-top:5% !important;
+       }
+    
+       #current-stop {
+        width: 65%;
+        font-size: 18px;
+       }
+    
+       #schedule table {
+        width: 60%;
+       }
+      
+  
+}
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+ /* Strona główna */
+    .nav {
+    display: none;
+ }
+
+ #pagetitle h1 {
+    width: 45% !important;
+ }
+
+ #Utext {
+    width: 79%;
+ }
+
+ #art-text {
+    width: 40%;
+ }
+
+#mobilemenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3px 2px;
+
+    .mobutton {
+        flex: 1 1 auto;
+        min-width: 150px;
+        text-align: center;
+        background-color: #d3d3d3;
+        color: #13131a;
+
+        a {
+            text-decoration: none;
+            color:#13131a;
+        }
+    }
+}
+
+ #articles {
+    width: 100%;
+ }
+
+ /* Wybieranie Rozkładu */
+#back {
+    margin-top: 5%;
+    border-radius: 0px 12px 12px 0px;
+    display: block !important;
+    background-color: #d3d3d3;
+    color: #13131a;
+    width: 15%;
+    font-size: 20px;
+}
+
+ #clock {
+    width: 20%;
+ }
+
+ .chossertable{
+    width: 90%;
+
+    .chooserbutton {
+        width: 6%;
+    }
+ }
+ /* Informacje o stronie */
+ #inftable {
+    width: 65% !important;
+ }
+
+ /* Tabelka Rozkładów */
+ #pagetitleTM h1 {
+    width: 50% !important;
+   }
+
+   #line-info {
+    width: 40% !important;
+   }
+   
+   #back {
+    margin-top:5% !important;
+   }
+
+   #current-stop {
+    width: 60%;
+    font-size: 18px;
+   }
+
+   #schedule table {
+    width: 45%;
+   }
+  
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
+}
+
