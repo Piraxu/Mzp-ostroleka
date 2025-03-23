@@ -87,7 +87,7 @@
     </div>
     
     <script>
-   function loadSchedule() {
+function loadSchedule() {
     const urlParams = new URLSearchParams(window.location.search);
     const jsonFilePath = urlParams.get('json');
 
@@ -96,7 +96,10 @@
         return;
     }
 
-    fetch(jsonFilePath)
+    // Dodanie timestamp do URL, aby uniknąć cache’owania
+    const noCacheUrl = `${jsonFilePath}?t=${Date.now()}`;
+
+    fetch(noCacheUrl, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Nie znaleziono pliku JSON.');
@@ -104,36 +107,41 @@
             return response.json();
         })
         .then(data => {
-            document.getElementById('linenmbr').textContent = `${data.line}`;
-            document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
-            document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
-
-            const scheduleContent = document.getElementById('schedule-content');
-            scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
-
-            const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
-
-            sortedHours.forEach(hour => {
-                const row = document.createElement('div');
-                row.classList.add('schedule-row');
-
-                const hourDiv = document.createElement('div');
-                hourDiv.classList.add('schedule-hour');
-                hourDiv.textContent = hour;
-
-                const minutesDiv = document.createElement('div');
-                minutesDiv.classList.add('schedule-minute');
-                minutesDiv.textContent = data.rozkład[hour].join(', ');
-
-                row.appendChild(hourDiv);
-                row.appendChild(minutesDiv);
-                scheduleContent.appendChild(row);
-            });
+            updateScheduleUI(data);
         })
         .catch(error => {
             alert("Błąd wczytywania pliku JSON: " + error.message);
         });
 }
+
+function updateScheduleUI(data) {
+    document.getElementById('linenmbr').textContent = data.line;
+    document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
+    document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
+
+    const scheduleContent = document.getElementById('schedule-content');
+    scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
+
+    const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
+
+    sortedHours.forEach(hour => {
+        const row = document.createElement('div');
+        row.classList.add('schedule-row');
+
+        const hourDiv = document.createElement('div');
+        hourDiv.classList.add('schedule-hour');
+        hourDiv.textContent = hour;
+
+        const minutesDiv = document.createElement('div');
+        minutesDiv.classList.add('schedule-minute');
+        minutesDiv.textContent = data.rozkład[hour].join(', ');
+
+        row.appendChild(hourDiv);
+        row.appendChild(minutesDiv);
+        scheduleContent.appendChild(row);
+    });
+}
+
 
     </script>
 </body>
