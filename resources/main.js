@@ -4,7 +4,7 @@ javascript:alert(`Szerokość w CSS pixels: ${window.innerWidth}px, Wysokość w
 
 
 function mlinks() {
-var actuallink = "/"
+var actuallink = "https://piraxu.github.io/Mzp-ostroleka/"
     var mpage = document.getElementById("mpage")
     var ttable = document.getElementById("ttables")
     var sil = document.getElementById("sil")
@@ -38,19 +38,4 @@ document.getElementById("hour").innerHTML = hour+":"+minutes
 document.getElementById("date").innerHTML = day+"-"+month+"-"+year
 
     setTimeout(clock, 1000);
-}
-
-function servershutdown() {
-    var hr = new Date();
-    var Shour = hr.getHours();
-    var Sminute = hr.getMinutes();
-    if(Sminute<10) Sminute = "0"+Sminute
-
-    var Fhour = Shour+"0"+Sminute 
-
-    console.log(Fhour)
-   
-    if(Fhour>= 23000){
-       javascript:alert("Uwaga!. W godzinach od 23:59 do 5:25 nasz serwer będzie wyłączony z powodu Oszczędności komponentów pracujących prawie 18h dziennie. W tym czasie strona będzie niedostępna. Dziękujemy za zrozumienie!")
-    }
 }
