@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
+    <title>MZP Ostrołęka - Rozkłady Jazdy</title>
+    <!--Styl CSS-->
+    <link rel="stylesheet" href="/resources/style.css" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="resources/IMG/mlogo.png"/>
+    <link rel="stylesheet" href="resources/fontello/css/fontello.css">
+    <!--Czcionka-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!--Java Script-->
+    <script src="resources/main.js?v=1" type="text/javascript"></script>
+</head>
+<body onload="clock(),mlinks()">
+    <div class="nav">
+        <div class="nav">
+            <span style="font-size:18px;"><img src="resources/IMG/mlogo.png" alt="MZP" style="height: 40px; vertical-align: middle;"> Ostrołęka </span>
+ <div style="border-left: 1px #1a1a1f solid;" class="menubutton">
+<a id="mpage" href="">Szybki Start</a>
+        </div>
+        <div class="menubutton">
+            <a id="ttables" href="">Rozkład Jazdy</a>
+                    </div>
+                    <div class="menubutton">
+                        <a id="sil" href="">Symulator SIL</a>
+                                </div>
+                                <div class="menubutton">
+                                    <a id="dcenter" href="">Centrum pobierania</a>
+                                            </div>
+                                            <div class="menubutton">
+                                                <a id="sinfo" href="">Informacje o stronie</a>
+                                            </div>         
+                                                 
+    </div>
+    </div>
+    <div id="content">
+        <div style="background-image: url(resources/IMG/Ttables.png) !important;" title="Autobus linii 59 w kierunku Górki Narodowej stojący na pętli Rynek Główny" id="pagetitle">
+            <H1 id="header-width" title="Tytuł strony" style="background-color: #1a1a1f; width: 25%; padding:1% 1%; display: block; margin:auto; border-radius: 12px;">Rozkłady Jazdy</H1>
+        </div>
+<div id="clock">
+    <span id="date"></span>
+    <span id="hour"></span>
+ </div>
+     <div style="display: none;" onclick="history.back()" id="back"> 
+        <i class="icon-reply">Wróć</i>
+     </div>
+ <div style="display: none;" id="mobilechooser">
+   <div id="lines-category">
+    <i id="category-name" class="icon-train">Linie Tramwajowe:</i>
+    <hr color="#d3d3d3">
+    <div id="mlines-content">
+        <a href="/timetables/11" class="MobileButton">11</a>
+        <a class="MobileButton">12</a>
+        <a class="MobileButton">13</a>
+        <a class="MobileButton">14</a>
+        <a class="MobileButton">15</a>
+        <a class="MobileButton">16</a>
+        <a class="MobileButton">17</a>
+        <a class="MobileButton">18</a>
+        <a class="MobileButton">19</a>
+        <a class="MobileButton">20</a>
+        <a class="MobileButton">21</a>
+        <a class="MobileButton">22</a>
+        
+    </div>
+    <hr color="#d3d3d3">
+   </div>
+
+   <div id="lines-category">
+    <i id="category-name" class="icon-bus">Linie Autobusowe:</i>
+    <hr color="#d3d3d3">
+    <div id="mlines-content">
+        <a class="MobileButton">51</a>
+        <a class="MobileButton">52</a>
+        <a class="MobileButton">53</a>
+        <a class="MobileButton">54</a>
+        <a class="MobileButton">55</a>
+        <a href="/timetables/56" class="MobileButton">56</a>
+        <a class="MobileButton">57</a>
+        <a class="MobileButton">58</a>
+        <a class="MobileButton">59</a>
+        <a class="MobileButton">60</a>
+    </div>
+    <hr color="#d3d3d3">
+   </div>
+
+   <div id="lines-category">
+    <i id="category-name" class="icon-stopwatch">Linie Pospieszne:</i>
+    <hr color="#d3d3d3">
+    <div id="mlines-content">
+        <a class="MobileButton">A</a>
+        <a class="MobileButton">B</a>
+        <a class="MobileButton">C</a>
+        <a class="MobileButton">D</a>
+        <a class="MobileButton">E</a>
+    </div>
+    <hr color="#d3d3d3">
+   </div>
+
+   <div id="lines-category">
+    <i id="category-name" class="icon-moon-inv">Linie Nocne:</i>
+    <hr color="#d3d3d3">
+    <div id="mlines-content">
+        <a class="MobileButton">N1</a>
+        <a class="MobileButton">N2</a>
+        <a class="MobileButton">N3</a>
+        <a class="MobileButton">N4</a>
+        <a class="MobileButton">N5</a>
+    </div>
+    <hr color="#d3d3d3">
+   </div>
+   
+ </div>
+ <hr style="height: 50px;" color="#13131a">
+ <div id="chooser-container">
+    <div id="Legend">
+        <h4>Legenda:</h4>
+        <div class="example_line"><p>85</p></div> 
+        <p class="exp_text">Linia Normalna</p> 
+        <div class="example_line"><p>85</p></div>
+        <p class="exp_text">Linia Specjalna</p> 
+        <div class="example_line"><p>85</p></div>
+        <p class="exp_text">Planowana Linia</p> 
+    </div>
+
+  <div id="timetable">
+    <div id="header"><i class="icon-train">-</i>Tramwaje</div>
+    <div id="lines">
+<a href="timetables/9" class="normal">9A</a>
+<a class="hint">?</a>
+    </div>
+  </div>
+<hr color="#13131a">
+  <div id="timetable">
+    <div id="header"><i class="icon-bus">-</i>Autobusy</div>
+    <div id="lines">
+<a href="" class="planed">51</a>
+<a class="hint">?</a>
+   </div>
+  </div>
+  <hr color="#13131a">
+  <div id="timetable">
+    <div id="header"><i class="icon-moon-inv">-</i>Autobusy Nocne</div>
+    <div id="lines">
+<a href="" class="planed">N1</a>
+<a class="hint">?</a>
+    </div>
+  </div>
+  <hr color="#13131a">
+  <div id="timetable">
+    <div id="header"><i class="icon-stopwatch">-</i>Autobusy Pospieszne</div>
+    <div id="lines">
+<a href="" class="planed">A</a>
+<a class="hint">?</a>
+
+    </div>
+  </div>
+    
+        <div style="clear:both"></div>
+
+            
+    </div>
+ </div>
+
+   
+
+
+    </div>
+
+</div>  
+<hr style="height: 10px;" color="#13131a">
+<div id="footer">
+    Stopka 
+</div>
+</body>
+</html>

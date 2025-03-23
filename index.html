@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
+    <title>MZP Ostrołęka - Szybki Start</title>
+    <!--Styl CSS-->
+    <link rel="stylesheet" href=/resources/style.css?v=1" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="resources/IMG/mlogo.png"/>
+    <link rel="stylesheet" href="resources/fontello/css/fontello.css">
+    <!--Czcionka-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!--Java Script-->
+    <script src="resources/main.js?v=4" type="text/javascript"></script>
+</head>
+<body onload="mlinks(),servershutdown()">
+    <div class="nav">
+            <span id="old-logo" style="font-size:18px;"><img src="resources/IMG/mlogo.png" alt="MZP" style="height: 40px; vertical-align: middle;"> Ostrołęka </span>
+ <div style="border-left: 1px #1a1a1f solid;" class="menubutton">
+<a id="mpage" href="">Szybki Start</a>
+        </div>
+        <div class="menubutton">
+            <a id="ttables" href="">Rozkład Jazdy</a>
+                    </div>
+                    <div class="menubutton">
+                        <a id="sil" href="">Symulator SIL</a>
+                                </div>
+                                <div class="menubutton">
+                                    <a id="dcenter" href="">Centrum pobierania</a>
+                                            </div>
+                                            <div class="menubutton">
+                                                <a id="sinfo" href="">Informacje o stronie</a>
+                                            </div>         
+                                                 
+    </div>
+    </div>
+
+    <div id="content">
+
+        <div title="Autobus linii pospiesznej A w kierunku pętli Tyniec podczas wyjazdu z zajezdni" id="pagetitle">
+            <H1 title="Tytuł strony" style="background-color: #1a1a1f; width: 25%; padding:1% 1%; display: block; margin:auto; border-radius: 12px;">Szybki Start</H1>
+            </div>
+            <hr color="#ffffff">
+<i id="U1div" class="icon-attention">Aktualności:</i> <marquee id="Utext">Brak aktualności do wyświetlenia.</marquee>
+<script>
+  fetch('resources/impediments.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json(); // Parsowanie odpowiedzi do formatu JSON
+    })
+    .then(data => {
+        // Wstaw zawartość pola "content" do elementu <marquee> o id "Utext"
+        document.getElementById('Utext').textContent = data.content;
+    })
+    .catch(error => console.error('Błąd podczas wczytywania JSON:', error));
+</script>
+<hr color="#ffffff">
+
+<div id="mobilemenu">
+<div class="mobutton">
+        <i class="icon-home">Szybki Start</i>
+</div>
+<div class="mobutton">
+    <a href="timetables.html">
+        <i class="icon-bus">Rozkład jazdy</i>
+    </a>
+</div>
+<div class="mobutton">
+    <a href="https://sil.kanbeq.me/">
+        <i class="icon-stopwatch">Symulator Sil</i>
+    </a>
+</div>
+<div class="mobutton">
+    <i class="icon-download">C. Pobierania</i>
+</div>
+<div class="mobutton">
+    <a href="info.html">
+        <i class="icon-info-circled">Informacje o stronie</i>
+    </a>
+</div>
+</div>
+
+
+
+<hr color="#13131a" style="height:50px;">
+<H2 id="art-text" style="text-align: center;">KALENDARIUM</H2>
+<hr color="#13131a" style="height:50px;">
+
+<div id="ar-container">
+    <div id="articles">
+        <div class="article">
+            <div id="a-date">
+                <span id="dofar">26</span>
+                <span id="mofar">PAŹD</span>
+            </div>
+            <div class="header"><h3>NOWA STRONA V-FIRMY W BUDOWIE!</h3></div>
+        </div>
+        <hr color="#13131a">
+        <div class="article">
+            <div id="a-date">
+                <span id="dofar">27</span>
+                <span id="mofar">PAŹD</span>
+            </div>
+            <div class="header"><h3>PRZESTAWIAMY ZEGARKI. ZMIANY ROZKŁADÓW</h3></div>
+        </div>
+        <hr color="#13131a">
+        <div class="article">
+            <div id="a-date">
+                <span id="dofar">22</span>
+                <span id="mofar">LIST</span>
+            </div>
+            <div class="header"><h3>DODAJEMY ROZKŁADY DO STRONY.</h3></div>
+        </div>
+        <hr color="#13131a">
+        <div class="article">
+            <div id="a-date">
+                <span id="dofar">08</span>
+                <span id="mofar">GRUD</span>
+            </div>
+            <div class="header"><h3>STYLE DLA URZĄDZEŃ MOBILNYCH PRAWIE NA FINISZU.</h3></div>
+        </div>
+        <hr color="#13131a">
+    </div>
+</div>
+        </div>
+
+<div id="footer">
+<h3>Na skróty:</h3>
+</div>
+
+</body>
+</html>
