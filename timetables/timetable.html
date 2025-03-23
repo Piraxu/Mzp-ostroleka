@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,">
+    <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
+    <title>MZP Ostrołęka - Rozkład Jazdy</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="/resources/fontello/css/fontello.css">
+    <link id="sicon" rel="icon" type="image/x-icon" href="/resources/img/mlogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="/resources/main.js"></script>
+</head>
+<body onload="loadSchedule(),mlinks(),servershutdown()">
+    <div class="nav">
+        <span id="menu-logo" style="font-size:18px;">
+            <img id="mimg" src="/resources/img/mlogo.png" alt="MZP" style="height: 40px; vertical-align: middle;"> Ostrołęka
+        </span>
+        <div style="border-left: 1px solid #1a1a1f;" class="menubutton"><a id="mpage" href="">Szybki Start</a></div>
+        <div class="menubutton"><a id="ttables" href="">Rozkład Jazdy</a></div>
+        <div class="menubutton"><a id="sil" href="">Symulator SIL</a></div>
+        <div class="menubutton"><a id="dcenter" href="">Centrum pobierania</a></div>
+        <div class="menubutton"><a id="sinfo" href="">Informacje o stronie</a></div>
+    </div>
+    
+    <div id="content">
+        <div id="pageimg">
+            <h1>Rozkład Jazdy</h1>
+        </div>
+
+        <div id="mobilemenu">
+            <div class="mobutton">
+                <a href="/index.html">
+                    <i class="icon-home">Szybki Start</i>
+                </a>
+            </div>
+            <div class="mobutton">
+                <a href="/timetables.html">
+                    <i class="icon-bus">Rozkład jazdy</i>
+                </a>
+            </div>
+            <div class="mobutton">
+                <a href="/https://sil.kanbeq.me/">
+                    <i class="icon-stopwatch">Symulator Sil</i>
+                </a>
+            </div>
+            <div class="mobutton">
+                <i class="icon-download">C. Pobierania</i>
+            </div>
+            <div class="mobutton">
+                <a href="/info.html">
+                    <i class="icon-info-circled">Informacje o stronie</i>
+                </a>
+            </div>
+            </div>
+
+        <div id="info">
+            <div id="line-box">
+                <h1 id="linenmbr">---</h1>
+            </div>
+            <div id="infbox">
+                <h3 id="Title">Rozkład jazdy linii ---, w kierunku [brak danych]</h3>
+                <div id="stop">
+                    <span id="current-stop">Przystanek : [brak danych]</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="schedule">
+            <div class="schedule-header">
+                <div class="schedule-hour">Godzina</div>
+                <div class="schedule-minute">Minuta</div>
+            </div>
+            <div id="schedule-content"></div>
+        </div>
+
+
+    
+      
+        
+        <div style="display: none;" id="warning">
+            <i class="icon-attention"><p>Twoja rozdzielczość ekranu jest mała, aby poprawnie obsłużyć tą stronę. Przepraszamy</p></i>
+        </div>
+    </div>
+    
+    <script>
+   function loadSchedule() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const jsonFilePath = urlParams.get('json');
+
+    if (!jsonFilePath) {
+        alert("Nie podano ścieżki do pliku JSON.");
+        return;
+    }
+
+    fetch(jsonFilePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Nie znaleziono pliku JSON.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('linenmbr').textContent = `${data.line}`;
+            document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
+            document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
+
+            const scheduleContent = document.getElementById('schedule-content');
+            scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
+
+            const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
+
+            sortedHours.forEach(hour => {
+                const row = document.createElement('div');
+                row.classList.add('schedule-row');
+
+                const hourDiv = document.createElement('div');
+                hourDiv.classList.add('schedule-hour');
+                hourDiv.textContent = hour;
+
+                const minutesDiv = document.createElement('div');
+                minutesDiv.classList.add('schedule-minute');
+                minutesDiv.textContent = data.rozkład[hour].join(', ');
+
+                row.appendChild(hourDiv);
+                row.appendChild(minutesDiv);
+                scheduleContent.appendChild(row);
+            });
+        })
+        .catch(error => {
+            alert("Błąd wczytywania pliku JSON: " + error.message);
+        });
+}
+
+    </script>
+</body>
+</html>

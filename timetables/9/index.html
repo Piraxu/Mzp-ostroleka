@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
+    <title>MZP Ostrołęka - Linia 9</title>
+    <!--Styl CSS-->
+    <link id="mainstyle" rel="stylesheet" href="" type="text/css"/>
+    <link id="sicon" rel="icon" type="image/x-icon" href="IMG/mlogo.png"/>
+    <link id="fontello" rel="stylesheet" href="fontello/css/fontello.css">
+    <!--Czcionka-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!--Java Script-->
+    <script id="mainjs" src="main.js" type="text/javascript"></script>
+    <script src="links.js?v=1" type="text/javascript"></script>
+</head>
+<body onload="timetableslinks(),mlinks(),clock(),servershutdown()">
+    <div class="nav">
+        <div class="nav">
+            <span style="font-size:18px;"><img src="mlogo.png" alt="MZP" id="mimg" style="height: 40px; vertical-align: middle;"> Ostrołęka </span>
+ <div style="border-left: 1px #1a1a1f solid;" class="menubutton">
+<a id="mpage" href="">Szybki Start</a>
+        </div>
+        <div class="menubutton">
+            <a id="ttables" href="">Rozkład Jazdy</a>
+                    </div>
+                    <div class="menubutton">
+                        <a id="sil" href="">Symulator SIL</a>
+                                </div>
+                                <div class="menubutton">
+                                    <a id="dcenter" href="">Centrum pobierania</a>
+                                            </div>
+                                            <div class="menubutton">
+                                                <a id="sinfo" href="">Informacje o stronie</a>
+                                            </div>         
+                                                 
+    </div>
+    </div>
+    <div id="content">
+        <div title="Autobus linii pospiesznej A w kierunku pętli Tyniec podczas wyjazdu z zajezdni" id="pagetitleT">
+            <H1 title="Tytuł strony" style="background-color: #1a1a1f; width: 27%; padding:1% 1%; display: block; margin:auto; border-radius: 12px;">Rozkład Jazdy Linia 9</H1>
+        </div>
+<hr color="#13131a" style="height: 50px;">
+<div style="display: none;" onclick="history.back()" id="back"> 
+    <i class="icon-reply">Wróć</i>
+ </div>
+<div id="stcontainer">
+    <div id="StopTable">
+        <div id="dirname">
+<i class="icon-right-thin">Blachownia</i>
+        </div>
+        <div id="content">
+            <a class="stop-element">Górka Narodowa</a>
+            <a class="stop-element-side">SBM</a>
+            <a class="stop-element-side">Nowosądecka</a>
+            <a class="stop-element-side">Rondo Czyżyńskie</a>
+            <a class="stop-element-side">Kombinat</a>
+            <a class="stop-element-side">Mszczonów PKP</a>
+            <a class="stop-element-side">Cm. Mościce</a>
+            <a class="stop-element-side">Żwiry</a>
+            <a class="stop-element-side">Basztowa</a>
+            <a class="stop-element-side">Blachownia</a>
+            <a class="stop-element-side">Blachownia PKP</a>
+            <a class="stop-element-side">Warszawska</a>
+            <a class="stop-element-side">Zaj. Tramwajowa</a>
+            <a class="stop-element">Traugutta</a>
+            <a class="stop-element">Nowosądecka</a>
+            <a class="stop-element">Górczyn PKP</a>
+            <a class="stop-element">Os. Zgody</a>
+            <a class="stop-element">Dw. Główny (T)</a>
+            <a class="stop-element">Ostrołęka Lotnisko</a>
+            <a class="stop-element">Salwator</a>
+            <a class="stop-element">Łódzka</a>
+            <a class="stop-element">Al. Jana Pawła II</a>
+            <a class="stop-element">Dw. Głowny</a>
+            <a class="stop-element">Warszawska</a>
+            <a class="stop-element">Blachownia PKP</a>
+            <a style="border-bottom: none;" class="stop-element">Blachownia</a>
+       
+        </div>
+    </div>
+<hr color="#13131a" style="width:10px; display: none;">
+    <div id="StopTable">
+        <div id="dirname">
+<i class="icon-right-thin">Górka Narodowa</i>
+        </div>
+        <div id="content">
+            <a class="stop-element">Blachownia</a>
+            <a class="stop-element">Blachownia PKP</a>
+            <a class="stop-element">Warszawska</a>
+            <a class="stop-element">Dw. Główny</a>
+            <a class="stop-element">Al. Jana Pawła II</a>
+            <a class="stop-element">Łódzka</a>
+            <a class="stop-element">Salwator</a>
+            <a class="stop-element">Ostrołęka Lotnisko</a>
+            <a class="stop-element">Dw. Główny (T)</a>
+            <a class="stop-element">Os. Zgody</a>
+            <a class="stop-element">Górczyn PKP</a>
+            <a class="stop-element">Nowosądecka</a> 
+            <a class="stop-element">Traugutta</a>      
+            <a style="border:none !important;" class="stop-element">Górka Narodowa</a>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    Przykładowy tekst
+</div>
+</body>
+</html>
