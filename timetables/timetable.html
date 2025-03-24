@@ -92,7 +92,7 @@
             return;
         }
 
-        // Dodajemy timestamp do URL-a, aby wymusić pobranie nowej wersji JSON-a
+      
         jsonFilePath += (jsonFilePath.includes('?') ? '&' : '?') + 't=' + Date.now();
 
         fetch(jsonFilePath)
@@ -108,9 +108,9 @@
                 document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
 
                 const scheduleContent = document.getElementById('schedule-content');
-                scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
+                scheduleContent.innerHTML = ''; 
 
-                const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
+                const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b));
 
                 sortedHours.forEach(hour => {
                     const row = document.createElement('div');
