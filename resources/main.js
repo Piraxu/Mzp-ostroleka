@@ -8,13 +8,11 @@ var actuallink = "https://piraxu.github.io/Mzp-ostroleka/"
     var mpage = document.getElementById("mpage")
     var ttable = document.getElementById("ttables")
     var sil = document.getElementById("sil")
-    var dcenter = document.getElementById("dcenter")
     var sinfo = document.getElementById("sinfo")
 
     mpage.setAttribute("href", actuallink+"index.html");
     ttable.setAttribute("href", actuallink+"timetables.html") 
     sil.setAttribute("href", "https://sil.kanbeq.me/")
-    dcenter.setAttribute("href", actuallink+"downloadcenter.html")
     sinfo.setAttribute("href", actuallink+"info.html")
 }
 
