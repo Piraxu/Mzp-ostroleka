@@ -55,7 +55,7 @@
                     <i class="icon-info-circled">Informacje o stronie</i>
                 </a>
             </div>
-            </div>
+        </div>
 
         <div id="info">
             <div id="line-box">
@@ -77,10 +77,6 @@
             <div id="schedule-content"></div>
         </div>
 
-
-    
-      
-        
         <div style="display: none;" id="warning">
             <i class="icon-attention"><p>Twoja rozdzielczość ekranu jest mała, aby poprawnie obsłużyć tą stronę. Przepraszamy</p></i>
         </div>
@@ -88,53 +84,55 @@
     
     <script>
    function loadSchedule() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const jsonFilePath = urlParams.get('json');
+        const urlParams = new URLSearchParams(window.location.search);
+        let jsonFilePath = urlParams.get('json');
 
-    if (!jsonFilePath) {
-        alert("Nie podano ścieżki do pliku JSON.");
-        return;
-    }
+        if (!jsonFilePath) {
+            alert("Nie podano ścieżki do pliku JSON.");
+            return;
+        }
 
-    fetch(jsonFilePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Nie znaleziono pliku JSON.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            document.getElementById('linenmbr').textContent = `${data.line}`;
-            document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
-            document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
+        // Dodajemy timestamp do URL-a, aby wymusić pobranie nowej wersji JSON-a
+        jsonFilePath += (jsonFilePath.includes('?') ? '&' : '?') + 't=' + Date.now();
 
-            const scheduleContent = document.getElementById('schedule-content');
-            scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
+        fetch(jsonFilePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Nie znaleziono pliku JSON.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('linenmbr').textContent = `${data.line}`;
+                document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
+                document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
 
-            const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
+                const scheduleContent = document.getElementById('schedule-content');
+                scheduleContent.innerHTML = ''; // Czyszczenie przed załadowaniem
 
-            sortedHours.forEach(hour => {
-                const row = document.createElement('div');
-                row.classList.add('schedule-row');
+                const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b)); // Sortowanie godzin
 
-                const hourDiv = document.createElement('div');
-                hourDiv.classList.add('schedule-hour');
-                hourDiv.textContent = hour;
+                sortedHours.forEach(hour => {
+                    const row = document.createElement('div');
+                    row.classList.add('schedule-row');
 
-                const minutesDiv = document.createElement('div');
-                minutesDiv.classList.add('schedule-minute');
-                minutesDiv.textContent = data.rozkład[hour].join(', ');
+                    const hourDiv = document.createElement('div');
+                    hourDiv.classList.add('schedule-hour');
+                    hourDiv.textContent = hour;
 
-                row.appendChild(hourDiv);
-                row.appendChild(minutesDiv);
-                scheduleContent.appendChild(row);
+                    const minutesDiv = document.createElement('div');
+                    minutesDiv.classList.add('schedule-minute');
+                    minutesDiv.textContent = data.rozkład[hour].join(', ');
+
+                    row.appendChild(hourDiv);
+                    row.appendChild(minutesDiv);
+                    scheduleContent.appendChild(row);
+                });
+            })
+            .catch(error => {
+                alert("Błąd wczytywania pliku JSON: " + error.message);
             });
-        })
-        .catch(error => {
-            alert("Błąd wczytywania pliku JSON: " + error.message);
-        });
-}
-
+    }
     </script>
 </body>
 </html>
