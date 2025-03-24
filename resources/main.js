@@ -1,6 +1,6 @@
 console.log("©Piraxu 2025")
 console.log("Oficjalna strona v-firmy MZP Ostrołęka.")
-javascript:alert(`Szerokość w CSS pixels: ${window.innerWidth}px, Wysokość w CSS pixels: ${window.innerHeight}px, DPR: ${window.devicePixelRatio}`);
+
 
 
 function mlinks() {
