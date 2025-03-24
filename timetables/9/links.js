@@ -15,7 +15,7 @@ function timetableslinks() {
 }
 
 function mlinks() {
-    var actuallink = "/"
+    var actuallink = "https://piraxu.github.io/Mzp-ostroleka/"
         var mpage = document.getElementById("mpage")
         var ttable = document.getElementById("ttables")
         var sil = document.getElementById("sil")
