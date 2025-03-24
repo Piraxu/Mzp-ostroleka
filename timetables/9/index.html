@@ -53,7 +53,7 @@
 <i class="icon-right-thin">Blachownia</i>
         </div>
         <div id="content">
-            <a class="stop-element">Górka Narodowa</a>
+            <a href="#" class="stop-element">Górka Narodowa</a>
             <a class="stop-element-side">SBM</a>
             <a class="stop-element-side">Nowosądecka</a>
             <a class="stop-element-side">Rondo Czyżyńskie</a>
@@ -108,5 +108,18 @@
 <div id="footer">
     Przykładowy tekst
 </div>
+        <script>
+             document.addEventListener("DOMContentLoaded", function() {
+            const stopLinks = document.querySelectorAll(".stop-element, .stop-element-side");
+            stopLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const originalHref = link.getAttribute("href");
+                    link.setAttribute("href", `${originalHref}?t=${Date.now()}`);
+                    window.location.href = link.getAttribute("href");
+                });
+            });
+        });
+        </script>
 </body>
 </html>
