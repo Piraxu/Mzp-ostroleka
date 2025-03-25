@@ -503,6 +503,10 @@ font-weight: 900;
 display: none !important;
    }
 
+    #chooser-container {
+        display:none;
+    }
+
    #mobilemenu {
     display: flex;
     flex-wrap: wrap;
@@ -705,6 +709,10 @@ gap:5px 4px;
    .nav {
     display: none !important;
        }
+
+       #chooser-container {
+        display:none;
+    }
     
        #mobilemenu {
         display: flex;
@@ -905,6 +913,10 @@ gap:5px 4px;
    .nav {
     display: none !important;
        }
+
+       #chooser-container {
+        display:none;
+    }
     
        #mobilemenu {
         display: flex;
@@ -1050,6 +1062,10 @@ gap:5px 4px;
     display: none;
  }
 
+       #chooser-container {
+        display:none;
+    }
+    
  #pagetitle h1 {
     width: 45% !important;
  }
