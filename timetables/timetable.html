@@ -79,57 +79,107 @@
         </div>
     </div>
     
-    <script>
-   function loadSchedule() {
-        const urlParams = new URLSearchParams(window.location.search);
-        let jsonFilePath = urlParams.get('json');
+   <script>
+function loadSchedule() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let jsonFilePath = urlParams.get('json');
 
-        if (!jsonFilePath) {
-            alert("Nie podano ścieżki do pliku JSON.");
-            return;
-        }
-
-      
-        jsonFilePath += (jsonFilePath.includes('?') ? '&' : '?') + 't=' + Date.now();
-
-        fetch(jsonFilePath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Nie znaleziono pliku JSON.');
-                }
-                return response.json();
-            })
-            .then(data => {
-                document.getElementById('linenmbr').textContent = `${data.line}`;
-                document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
-                document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
-
-                const scheduleContent = document.getElementById('schedule-content');
-                scheduleContent.innerHTML = ''; 
-
-                const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b));
-
-                sortedHours.forEach(hour => {
-                    const row = document.createElement('div');
-                    row.classList.add('schedule-row');
-
-                    const hourDiv = document.createElement('div');
-                    hourDiv.classList.add('schedule-hour');
-                    hourDiv.textContent = hour;
-
-                    const minutesDiv = document.createElement('div');
-                    minutesDiv.classList.add('schedule-minute');
-                    minutesDiv.textContent = data.rozkład[hour].join(', ');
-
-                    row.appendChild(hourDiv);
-                    row.appendChild(minutesDiv);
-                    scheduleContent.appendChild(row);
-                });
-            })
-            .catch(error => {
-                alert("Błąd wczytywania pliku JSON: " + error.message);
-            });
+    if (!jsonFilePath) {
+        alert("Nie podano ścieżki do pliku JSON.");
+        return;
     }
-    </script>
+
+    jsonFilePath += (jsonFilePath.includes('?') ? '&' : '?') + 't=' + Date.now();
+
+    fetch(jsonFilePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Nie znaleziono pliku JSON.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('linenmbr').textContent = `${data.line}`;
+            document.getElementById('Title').textContent = `Rozkład jazdy linii ${data.line}, w kierunku ${data.direction}`;
+            document.getElementById('current-stop').textContent = `Przystanek : ${data.przystanek}`;
+
+            const scheduleContent = document.getElementById('schedule-content');
+            scheduleContent.innerHTML = '';
+
+            const now = new Date();
+            const currentTotalMinutes = now.getHours() * 60 + now.getMinutes();
+
+            // Znajdź najbliższy kurs
+            let closestTime = null;
+
+            const allTimes = [];
+
+            for (const [hourStr, minutes] of Object.entries(data.rozkład)) {
+                const hour = parseInt(hourStr);
+                minutes.forEach(minuteStr => {
+                    const minute = parseInt(minuteStr);
+                    const totalMinutes = hour * 60 + minute;
+                    if (totalMinutes >= currentTotalMinutes) {
+                        allTimes.push({ hour, minute, totalMinutes });
+                    }
+                });
+            }
+
+            if (allTimes.length > 0) {
+                allTimes.sort((a, b) => a.totalMinutes - b.totalMinutes);
+                closestTime = allTimes[0];
+            }
+
+            // Teraz generuj rozkład jazdy z podkreśleniem najbliższej minuty
+            const sortedHours = Object.keys(data.rozkład).sort((a, b) => parseInt(a) - parseInt(b));
+
+            sortedHours.forEach(hour => {
+                const row = document.createElement('div');
+                row.classList.add('schedule-row');
+
+                const hourDiv = document.createElement('div');
+                hourDiv.classList.add('schedule-hour');
+                hourDiv.textContent = hour;
+
+                const minutesDiv = document.createElement('div');
+                minutesDiv.classList.add('schedule-minute');
+
+                const minutesArray = data.rozkład[hour];
+
+                const minuteSpans = minutesArray.map((minuteStr) => {
+                    const span = document.createElement('span');
+                    span.textContent = minuteStr;
+
+                    const minute = parseInt(minuteStr);
+                    if (
+                        closestTime &&
+                        parseInt(hour) === closestTime.hour &&
+                        minute === closestTime.minute
+                    ) {
+                        span.classList.add('highlight-minute');
+                    }
+
+                    return span;
+                });
+
+                // Dodaj przecinki między minutami
+                minuteSpans.forEach((span, index) => {
+                    minutesDiv.appendChild(span);
+                    if (index !== minuteSpans.length - 1) {
+                        minutesDiv.appendChild(document.createTextNode(', '));
+                    }
+                });
+
+                row.appendChild(hourDiv);
+                row.appendChild(minutesDiv);
+                scheduleContent.appendChild(row);
+            });
+        })
+        .catch(error => {
+            alert("Błąd wczytywania pliku JSON: " + error.message);
+        });
+}
+</script>
+
 </body>
 </html>
