@@ -154,6 +154,11 @@ i {
     border-radius: 0 0 12px 12px;
 }
 
+.highlight-minute {
+font-weight:900;
+text-decoration:underline;
+}
+
 /* Mobile styles */
 @media (max-width: 460px) {
     .nav {
