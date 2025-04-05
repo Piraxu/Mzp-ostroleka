@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
+    <title>MZP Ostrołęka - Linia 56</title>
+    <!--Styl CSS-->
+    <link id="mainstyle" rel="stylesheet" href="" type="text/css"/>
+    <link id="sicon" rel="icon" type="image/x-icon" href="IMG/mlogo.png"/>
+    <link id="fontello" rel="stylesheet" href="fontello/css/fontello.css">
+    <!--Czcionka-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!--Java Script-->
+    <script id="mainjs" src="main.js" type="text/javascript"></script>
+    <script src="links.js?v=1" type="text/javascript"></script>
+    <style>
+        a {
+            text-decoration:none;
+            color:#d3d3d3;
+        }
+    </style>
+</head>
+<body onload="timetableslinks(),mlinks(),clock(),servershutdown(),timestamp()">
+    <div class="nav">
+        <div class="nav">
+            <span style="font-size:18px;"><img src="mlogo.png" alt="MZP" id="mimg" style="height: 40px; vertical-align: middle;"> Ostrołęka </span>
+ <div style="border-left: 1px #1a1a1f solid;" class="menubutton">
+<a id="mpage" href="">Szybki Start</a>
+        </div>
+        <div class="menubutton">
+            <a id="ttables" href="">Rozkład Jazdy</a>
+                    </div>
+                    <div class="menubutton">
+                        <a id="sil" href="">Symulator SIL</a>
+                                </div>
+                    
+                                            <div class="menubutton">
+                                                <a id="sinfo" href="">Informacje o stronie</a>
+                                            </div>         
+                                                 
+    </div>
+    </div>
+    <div id="content">
+        <div style="background-image: url(https://piraxu.github.io/Mzp-ostroleka/resources/IMG/P_image.png) !important;" title="Autobus linii pospiesznej A w kierunku pętli Tyniec podczas wyjazdu z zajezdni" id="pagetitleT">
+            <H1 title="Tytuł strony" style="background-color: #1a1a1f; width: 28%; padding:1% 1%; display: block; margin:auto; border-radius: 12px;">Rozkład Jazdy Linia 56</H1>
+        </div>
+<hr color="#13131a" style="height: 50px;">
+<div style="display: none;" onclick="history.back()" id="back"> 
+    <i class="icon-reply">Wróć</i>
+ </div>
+<div id="stcontainer">
+    <div id="StopTable">
+        <div id="dirname">
+<i class="icon-right-thin">Lwówek Śląski</i>
+        </div>
+        <div id="content">
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s1.json" class="stop-element">Kamionka</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s2.json" class="stop-element">Sławków Rondo</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s3.json" class="stop-element">Kozanów STP</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s4.json" class="stop-element">Herberta</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s5.json" class="stop-element">Różewicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s6.json" class="stop-element">Karłowicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s7.json" class="stop-element">Stalowa</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s8.json" class="stop-element">Zagórzany</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s9.json" class="stop-element">Harbutowice</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s10.json" class="stop-element">Kęty Ratusz</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s11.json" class="stop-element">Kęty Kościół</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s12.json" class="stop-element">Jaktorów</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s13.json" class="stop-element">Zagórze</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s14.json" class="stop-element">Zagórze I</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s15.json" class="stop-element">Regulice</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s16.json" class="stop-element">Radłów</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/lwowek_sl/s17.json" style="border-bottom: none;" class="stop-element">Lwówek Śląski</a>
+       
+        </div>
+    </div>
+<hr color="#13131a" style="width:10px; display: none;">
+    <div id="StopTable">
+        <div id="dirname">
+<i class="icon-right-thin">Kamionka</i>
+        </div>
+        <div id="content">
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s1.json" class="stop-element">Lwówek Śląski</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s2.json" class="stop-element">Radłów</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s3.json" class="stop-element">Regulice</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s4.json" class="stop-element">Zagórze I</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s5.json" class="stop-element">Zagórze</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s6.json" class="stop-element">Jaktorów</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s7.json" class="stop-element">Kęty Kościół</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s8.json" class="stop-element">Kęty Ratusz</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s9.json" class="stop-element">Harbutowice</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s10.json" class="stop-element">Zagórzany</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s11.json" class="stop-element">Stalowa</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s12.json" class="stop-element">Karłowicza</a> 
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s13.json" class="stop-element">Różewicza</a>    
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s14.json" class="stop-element">Herberta</a>      	
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s15.json" class="stop-element">Kozanów STP</a>     
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s16.json" class="stop-element">Sławków Rondo</a>       			
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/l_56/kamionka/s17.json" style="border:none !important;" class="stop-element">Kamionka</a>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    Przykładowy tekst
+</div>
+        <script>
+             document.addEventListener("DOMContentLoaded", function() {
+            const stopLinks = document.querySelectorAll(".stop-element, .stop-element-side");
+            stopLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const originalHref = link.getAttribute("href");
+                    link.setAttribute("href", `${originalHref}?t=${Date.now()}`);
+                    window.location.href = link.getAttribute("href");
+                });
+            });
+        });
+        </script>
+</body>
+</html>
