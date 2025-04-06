@@ -3,6 +3,9 @@
     "direction": "Lwówek Śląski",
     "przystanek": "Tyniec Pętla",
     "rozkład": {
+         "00": [
+            "13"
+        ],
         "03": [
             "59"
         ],
