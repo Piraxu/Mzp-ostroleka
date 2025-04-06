@@ -3,6 +3,9 @@
     "direction": "Lwówek Śląski",
     "przystanek": "Ostrołęka Lotnisko",
     "rozkład": {
+        "00": [
+            "14"
+        ],
         "04": [
             "00",
             "38"
