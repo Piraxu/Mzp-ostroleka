@@ -3,6 +3,9 @@
     "direction": "Lwówek Śląski",
     "przystanek": "Tyniec Kamieniołom",
     "rozkład": {
+         "00": [
+            "14"
+        ],
         "03": [
             "59"
         ],
