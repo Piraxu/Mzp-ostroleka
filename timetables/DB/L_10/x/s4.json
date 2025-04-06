@@ -1,0 +1,10 @@
+{
+    "line": "10",
+    "direction": "Zaj. Warszawska",
+    "przystanek": "Dw. Główny",
+    "rozkład": {
+        "00": [
+            "17"
+        ]
+    }
+}
