@@ -455,7 +455,7 @@ display: none;
 
 .stop-element-side:hover {
     background-color: #d3d3d3;
-    color: #13131a;
+    color: #13131a !important;
     transition:all 1s;
 }
 
