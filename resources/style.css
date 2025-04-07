@@ -450,7 +450,7 @@ display: none;
     cursor:pointer;
     font-style: italic; 
     padding-left: 8%;
-    color: #13131a !important;
+    color: #d3d3d3 !important;
 }
 
 .stop-element-side:hover {
