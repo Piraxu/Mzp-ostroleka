@@ -1,0 +1,10 @@
+{
+    "line": "56",
+    "direction": "Zaj. Warszawska",
+    "przystanek": "Łódzka",
+    "rozkład": {
+        "21": [
+            "03"
+        ]
+    }
+}
