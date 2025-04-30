@@ -59,12 +59,12 @@ transition: all 1.2s;
 #pagetitle {
     text-align: center;
     background-image: url("IMG/day.png");
-    opacity: 50%;
+    opacity: 75%;
     padding:7% 7%;
     background-size: cover;
     background-size: cover; 
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center top 95%; 
 }
 
 #pagetitleT {
