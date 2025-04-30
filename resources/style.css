@@ -70,7 +70,7 @@ transition: all 1.2s;
 #pagetitleT {
     text-align: center;
     background-image: url("IMG/tram.png");
-    opacity: 50%;
+    opacity: 75%;
     padding:7% 7%;
     background-size: cover; 
     background-repeat: no-repeat;
