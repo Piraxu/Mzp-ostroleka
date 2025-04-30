@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Miejski Zakład Przewozów Ostrołęka. V-firma w grze nid's buses.">
+    <title>MZP Ostrołęka - Linia N1</title>
+    <!--Styl CSS-->
+    <link id="mainstyle" rel="stylesheet" href="" type="text/css"/>
+    <link id="sicon" rel="icon" type="image/x-icon" href="IMG/mlogo.png"/>
+    <link id="fontello" rel="stylesheet" href="fontello/css/fontello.css">
+    <!--Czcionka-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!--Java Script-->
+    <script id="mainjs" src="main.js" type="text/javascript"></script>
+    <script src="links.js?v=1" type="text/javascript"></script>
+    <style>
+        a {
+            text-decoration:none;
+            color:#d3d3d3;
+        }
+    </style>
+</head>
+<body onload="timetableslinks(),mlinks(),clock(),servershutdown(),timestamp()">
+    <div class="nav">
+        <div class="nav">
+            <span style="font-size:18px;"><img src="mlogo.png" alt="MZP" id="mimg" style="height: 40px; vertical-align: middle;"> Ostrołęka </span>
+ <div style="border-left: 1px #1a1a1f solid;" class="menubutton">
+<a id="mpage" href="">Szybki Start</a>
+        </div>
+        <div class="menubutton">
+            <a id="ttables" href="">Rozkład Jazdy</a>
+                    </div>
+                    <div class="menubutton">
+                        <a id="sil" href="">Symulator SIL</a>
+                                </div>
+                    
+                                            <div class="menubutton">
+                                                <a id="sinfo" href="">Informacje o stronie</a>
+                                            </div>         
+                                                 
+    </div>
+    </div>
+    <div id="content">
+        <div style="background-image: url(https://piraxu.github.io/Mzp-ostroleka/resources/IMG/night.png) !important; background-position: center top 55%; " title="Autobus linii pospiesznej A w kierunku pętli Tyniec podczas wyjazdu z zajezdni" id="pagetitleT">
+            <H1 title="Tytuł strony" style="background-color: #1a1a1f; width: 29%; padding:1% 1%; display: block; margin:auto; border-radius: 12px;">Rozkład Jazdy Linia N1</H1>
+        </div>
+<hr color="#13131a" style="height: 50px;">
+<div style="display: none;" onclick="history.back()" id="back"> 
+    <i class="icon-reply">Wróć</i>
+ </div>
+<div id="stcontainer">
+    <div id="StopTable">
+        <div id="dirname">
+<i class="icon-right-thin">Kozanów</i>
+        </div>
+        <div id="content">
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s1.json" class="stop-element">Górka Narodowa</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s2.json" class="stop-element">SBM</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s3.json" class="stop-element">Nowosądecka</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s4.json" class="stop-element">Sienkiewicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s5.json" class="stop-element">Górczyn PKP</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s6.json" class="stop-element">Chopina</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s7.json" class="stop-element">Al. Pokoju</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s8.json" class="stop-element">Dw. Główny</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s9.json" class="stop-element">Al. Jana Pawła II</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s10.json" class="stop-element">Kochłowice</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s11.json" class="stop-element">Dworcowa</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s12.json" class="stop-element">Warszawska</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s13.json" class="stop-element">Blachownia PKP</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s14.json" class="stop-element">Blachownia</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s15.json" class="stop-element">Rynek Gł.</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s16.json" class="stop-element">Karłowicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s17.json" class="stop-element">Różewicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s18.json" class="stop-element">Herberta</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s19.json" class="stop-element">Lindego</a>
+             <a style="border-bottom: none;" href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Kozanów/s20.json" class="stop-element">Kozanów</a>
+       
+        </div>
+    </div>
+<hr color="#13131a" style="width:10px; display: none;">
+    <div id="StopTable">
+        <div id="dirname">
+<i class="icon-right-thin">Górka Narodowa</i>
+        </div>
+        <div id="content">
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s1.json" class="stop-element">Kozanów</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s2.json" class="stop-element">Lindego</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s3.json" class="stop-element">Herberta</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s4.json" class="stop-element">Różewicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s5.json" class="stop-element">Karłowicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s6.json" class="stop-element">Rynek Gł.</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s7.json" class="stop-element">Blachownia</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s8.json" class="stop-element">Blachownia PKP</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s9.json" class="stop-element">Warszawska</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s10.json" class="stop-element">Dworcowa</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s11.json" class="stop-element">Kochłowice</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s12.json" class="stop-element">Al. Jana Pawła II</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s13.json" class="stop-element">Dw. Główny</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s14.json" class="stop-element">Al. Pokoju</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s15.json" class="stop-element">Chopina</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s16.json" class="stop-element">Górczyn PKP</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s17.json" class="stop-element">Sienkiewicza</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s18.json" class="stop-element">Nowosądecka</a>
+            <a href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s19.json" class="stop-element">SBM</a>
+            <a style="border-bottom: none;" href="https://piraxu.github.io/Mzp-ostroleka/timetables/timetable.html?json=DB/L_N1/Gn/s20.json" class="stop-element">Górka Narodowa</a>
+            
+        </div>
+    </div>
+</div>
+<div id="footer">
+    Przykładowy tekst
+</div>
+        <script>
+             document.addEventListener("DOMContentLoaded", function() {
+            const stopLinks = document.querySelectorAll(".stop-element, .stop-element-side");
+            stopLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const originalHref = link.getAttribute("href");
+                    link.setAttribute("href", `${originalHref}?t=${Date.now()}`);
+                    window.location.href = link.getAttribute("href");
+                });
+            });
+        });
+        </script>
+</body>
+</html>
