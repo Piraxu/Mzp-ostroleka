@@ -58,35 +58,21 @@ transition: all 1.2s;
 
 #pagetitle {
     text-align: center;
-    background-image: url("IMG/day.png");
     opacity: 75%;
     padding:7% 7%;
     background-size: cover;
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center top 80%; 
-}
 
-#pagetitleT {
-    text-align: center;
-    background-image: url("IMG/tram.png");
-    opacity: 75%;
-    padding:7% 7%;
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center top 37%;
+    h1 { 
+text-transform: uppercase;
+text-shadow: 1px 1px 2px #13131a;
+        font-size:48px;
+    }
 }
 
 
-#pagetitleTM {
-    text-align: center;
-    background-image: url("IMG/Timetableph.png");
-    opacity: 50%;
-    padding:7% 7%;
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-}
 
 #U1div {
     position: relative;
