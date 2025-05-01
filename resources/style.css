@@ -58,7 +58,6 @@ transition: all 1.2s;
 
 #pagetitle {
     text-align: center;
-    opacity: 75%;
     padding:7% 7%;
     background-size: cover;
     background-size: cover; 
@@ -69,6 +68,7 @@ transition: all 1.2s;
 text-transform: uppercase;
 text-shadow: 1px 1px 2px #13131a;
         font-size:48px;
+        opacity: 75%;
     }
 }
 
