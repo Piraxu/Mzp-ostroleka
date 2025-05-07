@@ -21,6 +21,46 @@
             text-decoration:none;
             color:#d3d3d3;
         }
+
+        #Ttinformation {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#inf-circle {
+    background-color: #d3d3d3;
+    color: #13131a;
+    font-size: 42px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -18px; 
+    z-index: 2;
+    border: 2px solid #13131a; 
+}
+
+#inf-circle i {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+#InfoText {
+    background-color: #d3d3d3;
+    color: #13131a;
+    font-size: 12px;
+    width: 20%;
+    padding: 8px 16px;
+    border-radius: 0 5px 5px 0; 
+    z-index: 1;
+    position: relative;
+    border-left: 2px solid #13131a; 
+    text-align: center;
+}
     </style>
 </head>
 <body onload="timetableslinks(),mlinks(),clock(),servershutdown(),timestamp()">
@@ -51,6 +91,12 @@
 <div style="display: none;" onclick="history.back()" id="back"> 
     <i class="icon-reply">Wróć</i>
  </div>
+          <div id="Ttinformation">
+        <div id="inf-circle">
+            <i class="icon-info-circled"></i>
+        </div>
+        <div id="InfoText"><a>autobusy nocne przy zjeździe i wyjeździe z zajezdni nie zatrzymują się na przystankach.</a></div>
+    </div>
 <div id="stcontainer">
     <div id="StopTable">
         <div id="dirname">
