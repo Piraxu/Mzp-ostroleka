@@ -526,6 +526,10 @@ display: none !important;
    
    #pagetitle h1 {
     width: 90% !important;
+       text-transform: uppercase;
+       text-shadow: 1px 1px 2px #13131a;
+       font-size: 36px;
+       opacity: 75%;
    }
 
    #art-text {
@@ -732,7 +736,11 @@ gap:5px 4px;
        
        
        #pagetitle h1 {
-        width: 70% !important;
+        width: 90% !important;
+            text-transform: uppercase;
+       text-shadow: 1px 1px 2px #13131a;
+       font-size: 40px;
+       opacity: 75%;
        }
     
        #art-text {
